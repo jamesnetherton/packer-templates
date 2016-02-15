@@ -1,0 +1,6 @@
+.vagrant/
+packer_cache/
+*.box
+.idea
+Vagrantfile
+
