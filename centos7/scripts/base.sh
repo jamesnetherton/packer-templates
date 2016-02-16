@@ -6,6 +6,10 @@ set -x
 yum install -y kernel-devel-$(uname -r)
 
 # Enable iptables, disable firewalld
+iptables -I INPUT 1 -p tcp --dport 8443 -j ACCEPT
+iptables -I INPUT 2 -p tcp --dport 2375 -j ACCEPT
+
+service iptables save
 systemctl enable iptables
 systemctl disable firewalld
 
